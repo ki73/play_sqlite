@@ -1,0 +1,13 @@
+---
+- hosts: all
+  any_errors_fatal: true
+  tasks:
+    - name: start
+      debug:
+        msg: "Start Build"
+        verbosity: 1
+
+    - name: Execute Python Script sqlite
+      shell: python3 files/sqlite3_test.py
+      delegate_to: localhost
+        
