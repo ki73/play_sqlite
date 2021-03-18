@@ -19,8 +19,8 @@ def select_foo(conn):
 
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+    # for row in rows:
+    #     print(row)
 
     return json.dumps(rows)
 
@@ -30,7 +30,6 @@ def main():
 
     conn = create_connection(database)
     with conn:
-        print("Select foo")
         output_json = select_foo(conn)
         print(output_json)
 

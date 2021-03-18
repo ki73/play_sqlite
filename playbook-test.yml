@@ -10,4 +10,10 @@
     - name: Execute Python Script sqlite
       shell: python3 files/sqlite3_test.py
       delegate_to: localhost
-        
+      register: output
+
+    - name: debug output
+      debug:
+        msg:
+          - "{{ output.stdout }}"
+      when: output.stdout is defined
