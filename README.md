@@ -20,5 +20,8 @@ echo "Logdatei: ${ANSIBLE_LOG_PATH}"
 ansible --version | head -n 1
 ansible --version | grep "python version"
 
+sqlite3 sqlite.db
+sqlite3 sqlite.db < initdb.sql
+
 ansible-playbook -i inventories/test/hosts.ini -v playbook-test.yml
 ```
